@@ -1,0 +1,226 @@
+/* import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* custom properties */
+
+:root {
+  /* custom colors */
+
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+
+  --neutral-very-dark-blue: hsl(234, 12%, 34%);
+  --neutral-grayish-blue: hsl(229, 6%, 66%);
+  --neutral-very-light-gray: hsl(0, 0%, 98%);
+
+  /* typography */
+
+  --ff-main: "Poppins", sans-serif;
+
+  --fs-400: 0.9375rem;
+
+  --fw-light: 200;
+  --fw-normal: 400;
+  --fw-bold: 600;
+}
+
+/* css resets */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%;
+  line-height: 1.6;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.6;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* utility classes */
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fs-h2 {
+  font-size: 20px;
+  color: var(--neutral-very-dark-blue);
+}
+
+/* general styling */
+
+body {
+  font-family: var(--ff-main);
+  font-weight: var(--fw-normal);
+  font-size: 13px;
+  color: var(--neutral-grayish-blue);
+  background-color: var(--neutral-very-light-gray);
+  display: grid;
+  justify-items: center;
+ 
+}
+
+
+.primary-header {
+  margin-top: 5vh;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+
+.header-wrapper {
+  max-width: 500px;
+  padding-inline: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: var(--fw-light);
+}
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--neutral-very-dark-blue);
+}
+.blurb {
+  margin-block: 1.5rem;
+}
+.card {
+  display: grid;
+  padding: 1.5rem 1.5rem;
+  gap: .25rem;
+  background-color: #FFF;
+  position: relative;
+  margin: 2rem;
+  border-radius: 7px;
+  min-width: 300px;
+}
+
+.card > img {
+  height: 3.5rem;
+  width: auto;
+  margin-top: 1.5rem;
+  margin-left: auto;
+}
+
+
+@media (min-width: 50em) {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+}
+
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--neutral-very-dark-blue);
+  border-radius: inherit;
+  translate: -1rem 1rem;
+  filter: blur(.5rem);
+  opacity: .125;
+  z-index: -1;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--neutral-very-dark-blue);
+  border-radius: inherit;
+  translate: 1rem 1rem;
+  filter: blur(.5rem);
+  opacity: .125;
+  z-index: -1;
+}
+
+.supervisor {
+  border-top: 4px solid var(--primary-cyan);
+}
+
+.team {
+  border-top: 4px solid var(--primary-red);
+}
+.karma {
+  border-top: 4px solid var(--primary-orange);
+}
+.calculator {
+  border-top: 4px solid var(--primary-blue);
+}
